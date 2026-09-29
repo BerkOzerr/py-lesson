@@ -24,14 +24,16 @@ import pandas as pd
 # print(series.iloc[1], "=",series.loc["Day 2"])
 # print(series[series>=2000])
 
-employee = {
-  "Name" : ["Berk" , "Emre" , "Ahmet"],
-  "Age" : [28,28,34]
-}
-dataframe = pd.DataFrame(employee , index=["employee 1" , "employee 2",  "employee 3"])
-dataframe["Job"]= ["Yazilim", "N/A",  "Cook"]
-new_Rows = pd.DataFrame([{"Name" : "Selda",  "Age": 44 , "Job" :"HouseCaring"},
-                        {"Name" : "Nehir",  "Age": 19 , "Job" :"Student"} ], index=["employee 4","employee 5"])
-dataframe =pd.concat([dataframe , new_Rows])
+employee = {"Name": ["Berk", "Emre", "Ahmet"], "Age": [28, 28, 34]}
+dataframe = pd.DataFrame(employee, index=["employee 1", "employee 2", "employee 3"])
+dataframe["Job"] = ["Yazilim", "N/A", "Cook"]
+new_Rows = pd.DataFrame(
+    [
+        {"Name": "Selda", "Age": 44, "Job": "HouseCaring"},
+        {"Name": "Nehir", "Age": 19, "Job": "Student"},
+    ],
+    index=["employee 4", "employee 5"],
+)
+dataframe = pd.concat([dataframe, new_Rows])
 print(dataframe)
 # print(dataframe.loc["employee 1"], "\n", dataframe.iloc[0])

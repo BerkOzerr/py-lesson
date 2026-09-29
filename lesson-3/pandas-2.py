@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
-df = pd.read_csv("data.csv",index_col="Name") 
+
+df = pd.read_csv("data.csv", index_col="Name")
 
 # df=pd.read_json("data.json")
 # df=pd.read_json("C:\\Users\\berke\\Desktop\\data.json")
@@ -18,7 +19,7 @@ df = pd.read_csv("data.csv",index_col="Name")
 # pokemon = input("Enter a Pokemon Name : ")
 
 
-# try: 
+# try:
 #   print(df.loc[pokemon])
 # except KeyError:
 #   print(f"{pokemon} not found")
@@ -82,7 +83,7 @@ df = pd.read_csv("data.csv",index_col="Name")
 # print(df.sort_values("Weight", ascending=False).head(10))
 # df["BMI"] = df["Weight"] / df["Height"]**2
 # print(df[["Weight", "Height", "BMI"]].to_string())
-# df["Type1"]= df["Type1"].replace({"Grass": "GRASS"}) 
+# df["Type1"]= df["Type1"].replace({"Grass": "GRASS"})
 # df= df.reset_index()
 # df["Name"] = df["Name"].str.lower()
 # df = df.drop_duplicates() #duplicates remove

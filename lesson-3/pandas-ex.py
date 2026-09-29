@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+
 df = pd.read_csv("data.csv")
 # print(df[:5])
 
@@ -88,12 +89,8 @@ print(df.groupby("Legendary")["Weight"].mean())
 # )
 
 ############################Önemli
-print(df.loc[
-    (df["Type1"] == "Fire") & (df["Weight"] > 20),
-    "Name"
-])
+print(df.loc[(df["Type1"] == "Fire") & (df["Weight"] > 20), "Name"])
 
-print(df.loc[
-    (df["Type1"] == "Fire") & (df["Weight"] > 20) & (df["Height"] > 1.5),
-      "Name"
-])
+print(
+    df.loc[(df["Type1"] == "Fire") & (df["Weight"] > 20) & (df["Height"] > 1.5), "Name"]
+)

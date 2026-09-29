@@ -1,4 +1,5 @@
 import numpy as np
+
 np.set_printoptions(precision=2)
 # array  =np.array([[[1,2,3,4],[0,9,7,3] ,[5,6,7,8]],
 #                   [[1,2,3,4],[0,9,7,3] ,[5,6,7,8]],
@@ -8,7 +9,7 @@ np.set_printoptions(precision=2)
 #                   [9,10,11,12],
 #                   [13,14,15,16]])
 # array =np.array([1,2,3,4])
-#array[len(array)-1], array[-1] || array[len(array)-2], array[-2]
+# array[len(array)-1], array[-1] || array[len(array)-2], array[-2]
 
 # array = array*2
 # print(array)
@@ -79,17 +80,25 @@ np.set_printoptions(precision=2)
 # adults = np.where(ages >=18,ages ,0)
 # print(adults)
 
-rng= np.random.default_rng() # rng= np.random.default_rng(seed=1) aynı döndürür
+rng = np.random.default_rng()  # rng= np.random.default_rng(seed=1) aynı döndürür
 
 # print(rng.integers(0,9 ,size=(2,3)))
 
-array =np.array([1,2,3,4,5,6,])
+array = np.array(
+    [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+    ]
+)
 # rng.shuffle(array)
 # print(array)
 
-array=np.array(["🍩" , "🍕" ,"🌮", "🍪","🍌"])
-fruit= rng.choice(array,size=(4,4))
+array = np.array(["🍩", "🍕", "🌮", "🍪", "🍌"])
+fruit = rng.choice(array, size=(4, 4))
 print(fruit)
 # np.random.seed(seed=1)
 # print(np.random.uniform(-99,99,size=(2,2)))
-
