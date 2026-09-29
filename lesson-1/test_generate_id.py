@@ -15,8 +15,8 @@ def test_generate_id_value(value):
     with pytest.raises(ValueError):
         generate_id(value)
 
-@pytest.mark.parametrize("notType", ["a" , " " , [], None])
+
+@pytest.mark.parametrize("notType", ["a", " ", [], None])
 def test_generate_id_type(notType):
     with pytest.raises(TypeError):
         generate_id(notType)
-
