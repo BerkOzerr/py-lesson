@@ -1,150 +1,350 @@
-# py-lesson
+🐍 Python Learning Repository
 
-Python, NumPy ve pandas öğrenirken yazdığım alıştırmalar ve mini projeler.
-Her klasör bir öğrenme adımına karşılık gelir.
+Python öğrenme sürecimde yazdığım dersler, alıştırmalar, mini projeler ve testler.
 
-> Bu repo bir öğrenme günlüğüdür. Kodlar zamanla iyileştirilir, eski hatalar
-> "Öğrendiklerim" bölümünde not edilir.
+Bu repository'yi sadece tamamlanmış projeleri göstermek için değil, öğrenme sürecimi ve zaman içinde geliştirdiğim kodları takip etmek için kullanıyorum.
 
-## İçindekiler
+Kodlar geliştikçe eski çözümler iyileştiriliyor, yeni konular ekleniyor ve karşılaştığım problemler not ediliyor.
 
-- [Proje yapısı](#proje-yapısı)
-- [Kurulum](#kurulum)
-- [Kullanım: ID üretici](#kullanım-id-üretici)
-- [Testleri çalıştırma](#testleri-çalıştırma)
-- [Öğrendiklerim](#öğrendiklerim)
-- [Durum](#durum)
+📚 İçerik
 
-## Proje yapısı
+Repository içerisinde farklı Python konularını ve küçük projeleri aşamalı olarak çalışıyorum.
 
-<!-- Kendi dosya adlarına göre düzenle -->
+🐍 Python Fundamentals
 
-```
+Variables ve data types
+
+if / elif / else
+
+for ve while
+
+Functions
+
+Lists
+
+Dictionaries
+
+Nested data structures
+
+User input
+
+Exception handling
+
+try / except
+
+🧱 Object-Oriented Python
+
+Classes
+
+Objects
+
+dataclass
+
+**post_init**
+
+Methods
+
+Type annotations
+
+field(default_factory=...)
+
+📁 File Handling
+
+JSON
+
+JSON'dan veri okuma
+
+JSON'a veri yazma
+
+Python objelerini JSON'a dönüştürme
+
+asdict()
+
+🧪 Testing
+
+pytest
+
+Unit tests
+
+Exception testing
+
+Edge cases
+
+Input validation
+
+🔢 NumPy
+
+NumPy ile temel veri yapıları ve matematiksel işlemler üzerine alıştırmalar.
+
+🐼 pandas
+
+pandas kullanarak veri okuma, temizleme ve veri üzerinde işlem yapma çalışmaları.
+
+💻 Command Line
+
+sys.argv
+
+Terminalden parametre alma
+
+input() ile kullanıcıdan veri alma
+
+CLI input validation
+
+🚀 Mini Projects
+Random ID Generator
+
+Belirtilen uzunlukta rastgele ID oluşturan küçük bir CLI uygulaması.
+
+ID'ler:
+
+Küçük harfler
+
+Rakamlar
+
+kullanılarak oluşturulur.
+
+Örneğin:
+
+a72k039xq1
+
+Terminalden uzunluk verilebilir:
+
+python lesson-1/id_generator.py 10
+
+Argument verilmezse program kullanıcıdan uzunluğu ister:
+
+python lesson-1/id_generator.py
+
+Python içerisinden de kullanılabilir:
+
+from id_generator import generate_id
+
+generate_id(10)
+
+Geçersiz değerler için validation uygulanmaktadır.
+
+Student Management System
+
+Öğrencileri, dersleri ve notları yönetmek için geliştirdiğim CLI tabanlı uygulama.
+
+Uygulamada:
+
+Öğrenci ekleme
+
+Öğrenci silme
+
+Ders ekleme
+
+Bir derse birden fazla not ekleme
+
+Notları 0-100 arasında doğrulama
+
+Ders ortalaması hesaplama
+
+Harf notu hesaplama
+
+Öğrenci listesini görüntüleme
+
+JSON dosyasında veri saklama
+
+özellikleri üzerinde çalışıyorum.
+
+Veri yapısı temel olarak:
+
+[
+Student(
+name="Ali",
+Nots={
+"Almanca": [100, 90, 45],
+"İngilizce": [80, 75]
+}
+)
+]
+
+şeklindedir.
+
+JSON'a kaydedildiğinde:
+
+[
+{
+"name": "Ali",
+"Nots": {
+"Almanca": [100, 90, 45],
+"İngilizce": [80, 75]
+}
+}
+]
+
+şeklinde saklanır.
+
+🧪 Testing
+
+Projelerde özellikle edge case'leri test etmeye çalışıyorum.
+
+Örneğin ID generator için:
+
+pytest
+
+ve ayrıntılı çıktı için:
+
+pytest -v
+
+kullanılabilir.
+
+Testlerde özellikle:
+
+Geçerli input
+
+0
+
+Negatif değerler
+
+String değerler
+
+Geçersiz input
+
+Sonuç uzunluğu
+
+Üretilen karakterlerin geçerliliği
+
+gibi durumları kontrol ediyorum.
+
+📂 Repository Structure
 py-lesson/
+│
 ├── lesson-1/
-│   ├── id_generator.py        # ID üretici (komut satırı + fonksiyon)
-│   └── test_id_generator.py   # pytest testleri
-├── lesson-2/                  # NumPy alıştırmaları
-├── lesson-3/                  # pandas alıştırmaları
+│ ├── id_generator.py
+│ └── test_id_generator.py
+│
+├── lesson-2/
+│ └── ...
+│
+├── lesson-3/
+│ └── ...
+│
 ├── requirements.txt
 ├── .gitignore
 └── README.md
-```
 
-## Kurulum
+Repository büyüdükçe yeni dersler ve projeler bu yapıya eklenecek.
 
-Python 3.10 veya üstü gerekir.
+⚙️ Installation
 
-```bash
-# 1. Repo'yu indir
+Python 3.x gereklidir.
+
+Repository'yi klonlayın:
+
 git clone https://github.com/BerkOzerr/py-lesson.git
 cd py-lesson
 
-# 2. Sanal ortam oluştur
+Sanal ortam oluşturmak için:
+
 python -m venv .venv
 
-# 3. Sanal ortamı etkinleştir
-.venv\Scripts\activate          # Windows
-source .venv/bin/activate       # macOS / Linux
+Windows:
 
-# 4. Bağımlılıkları yükle
+.venv\Scripts\activate
+
+macOS / Linux:
+
+source .venv/bin/activate
+
+Bağımlılıkları yüklemek için:
+
 pip install -r requirements.txt
-```
 
-## Kullanım: ID üretici
+▶️ Running the Projects
 
-Belirtilen uzunlukta rastgele bir ID üretir (küçük harf ve rakamlardan oluşur).
+Örneğin ID generator:
 
-```bash
-# Uzunluğu argüman olarak ver
-python lesson-1/id_generator.py 8
+python lesson-1/id_generator.py 10
 
-# Argüman vermezsen uzunluk sorulur
-python lesson-1/id_generator.py
-```
+Testleri çalıştırmak için:
 
-Örnek çıktı (her çalıştırmada değişir):
-
-```
-o18xum59
-```
-
-Kurallar:
-
-- Uzunluk **tam sayı** olmalı.
-- Uzunluk **en az 1** olmalı.
-- Geçersiz girdide program anlamlı bir hata mesajı verir.
-
-Python içinden de kullanılabilir:
-
-```python
-from id_generator import generate_id
-
-generate_id(8)       # "o18xum59"
-generate_id(0)       # ValueError
-generate_id("8")     # TypeError
-```
-
-## Testleri çalıştırma
-
-Testler [pytest](https://docs.pytest.org/) ile yazıldı.
-
-```bash
-# Tüm testleri çalıştır
 pytest
 
-# Ayrıntılı çıktı (hangi test geçti / kaldı)
+Ayrıntılı test çıktısı:
+
 pytest -v
 
-# Yalnızca adında "zero" geçen testleri çalıştır
-pytest -k zero
-```
+💡 Öğrendiklerim
 
-Örnek çıktı (kendi çıktınla değiştir):
+Bu repository'nin önemli bir amacı da karşılaştığım hataları ve öğrendiğim noktaları kaydetmek.
 
-```
-lesson-1/test_id_generator.py::test_valid_length PASSED        [ 25%]
-lesson-1/test_id_generator.py::test_only_allowed_characters PASSED [ 50%]
-lesson-1/test_id_generator.py::test_zero_raises PASSED         [ 75%]
-lesson-1/test_id_generator.py::test_str_raises PASSED          [100%]
+Şu ana kadar özellikle:
 
-==================== 4 passed in 0.03s ====================
-```
+input() ve sys.argv değerlerinin string olarak gelmesi
 
-### Neyi test ediyoruz?
+int() dönüşümü ve ValueError
 
-| Test                           | Kontrol ettiği şey                                               |
-| ------------------------------ | ---------------------------------------------------------------- |
-| `test_valid_length`            | Geçerli uzunluklarda (1, 2, 7, 8, 1000) sonuç uzunluğu doğru mu? |
-| `test_only_allowed_characters` | Sonuç yalnızca küçük harf ve rakam içeriyor mu?                  |
-| `test_zero_raises`             | `0` ve negatif sayılar `ValueError` fırlatıyor mu?               |
-| `test_str_raises`              | Metin veya ondalık sayı `TypeError` fırlatıyor mu?               |
+raise ile return arasındaki fark
 
-ID'ler rastgele üretildiği için testler sonucun _değerini_ değil, _özelliklerini_
-(uzunluk, izin verilen karakterler, hata durumları) kontrol eder.
+try/except kapsamının hata mesajlarına etkisi
 
-## Öğrendiklerim
+list, dict ve iç içe veri yapıları
 
-Bu bölüm yaptığım hataları ve onlardan çıkardığım dersleri içerir.
+dataclass kullanımı
 
-- **`return` ile `raise` farkı:** `return ValueError(...)` hata fırlatmaz, sadece
-  bir hata nesnesi döndürür. Hata durumunda `raise` kullanılır.
-- **Sınır değerleri:** `x < 1` ile `x <= 1` farkı, 1 geçerli mi geçersiz mi
-  sorusunu değiştirir. Sınır değerleri (0, 1, -1) her zaman test edilir.
-- **`input()` ve `sys.argv` her zaman metin döndürür:** Sayı gerekiyorsa `int()`
-  ile çevirmek ve çeviri hatasını ayrıca yakalamak gerekir.
-- **Geniş `try` bloğu yanlış mesaj verebilir:** `try` içine yalnızca hata
-  beklenen satırı koy.
-- **pandas metodları çoğunlukla yeni nesne döndürür:** `df.fillna(...)` sonucu
-  bir değişkene atanmazsa hiçbir şey değişmez.
+**post_init**
 
-## Durum
+JSON serialization / deserialization
 
-- [x] Python temelleri
-- [x] NumPy temelleri
-- [x] pandas temelleri
-- [ ] ID üretici: testler ve README (devam ediyor)
-- [ ] Sınıflar, dataclass, dosya işleme
-- [ ] API ve hata yönetimi
-- [ ] NumPy: matris çarpımı ve vektörizasyon
-- [ ] pandas: kirli gerçek veri temizleme
+asdict()
+
+default_factory
+
+Input validation
+
+Edge case testleri
+
+pytest
+
+CLI uygulamalarında kullanıcı girdisi kontrolü
+
+üzerinde çalışıyorum.
+
+📈 Progress
+
+Repository aktif olarak geliştirilmektedir.
+
+Öğrenme sırası kesin ve tamamlanmış bir müfredat değildir. Yeni konular öğrendikçe eski kodlar da yeniden düzenlenmektedir.
+
+Python basics
+
+Lists & dictionaries
+
+Functions
+
+Exception handling
+
+JSON / file handling
+
+CLI arguments
+
+Basic testing
+
+Dataclass
+
+Student management mini project
+
+Random ID generator
+
+Daha kapsamlı unit tests
+
+Daha gelişmiş OOP
+
+API çalışmaları
+
+Daha büyük Python projeleri
+
+🎯 Repository Goal
+
+Bu repository'nin amacı Python'u sadece teorik olarak öğrenmek yerine kod yazarak, hata yaparak, test ederek ve mevcut kodu geliştirerek öğrenmek.
+
+Zaman içerisinde bu repository'nin daha büyük Python projelerine geçiş için bir öğrenme günlüğü ve referans noktası haline gelmesini hedefliyorum.
+
+👨‍💻 Author
+
+Berk Özer
+
+GitHub: BerkOzerr
