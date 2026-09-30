@@ -4,22 +4,23 @@ import sys
 
 
 def main():
-    arg_length = sys.argv[1] if len(sys.argv) >= 2 else None
-    if arg_length is None:
-        x = input("Enter your Id key length Number :")
-        print(generate_id(x))
+    if len(sys.argv) >= 2:
+        try:
+            arg_value = int(sys.argv[1])
+            print(generate_id(arg_value))
+        except ValueError:
+            print("Please your value should be integer.")
     else:
         try:
-            print(generate_id(arg_length))
+            x = int(input("Enter your id size :"))
+            print(generate_id(x))
         except ValueError:
-            print(f"x = {arg_length} value must be >= 1")
+            print("Please your value should be integer.")
 
 
 def generate_id(x):
-    if not isinstance(x, int):
-        raise TypeError(f"must be integer x : {type(x).__name__}")
     if x < 1:
-        raise ValueError("x should be greater than 0")
+        raise ValueError(f"{x} Value must be greater than 0")
     generator_list = [
         random.choice(string.ascii_lowercase)
         if i < x // 2
