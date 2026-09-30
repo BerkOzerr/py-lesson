@@ -1,6 +1,8 @@
-from generate_id import generate_id
-import pytest
 import string
+
+import pytest
+
+from generate_id import generate_id
 
 
 @pytest.mark.parametrize("length", [1, 2, 12, 11])
