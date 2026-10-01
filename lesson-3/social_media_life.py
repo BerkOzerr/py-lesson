@@ -293,22 +293,29 @@ Yine negatif ve güçlü.
 
 Günlük kullanım süresi arttıkça GPA'nın daha düşük olma eğilimi görülüyor.
 """
-variables = [
-    "Sleep_Duration_Hours",
-    "Sleep_Quality_Score",
-    "Perceived_Stress_Score",
-    "Mental_Health_Index",
-    "Academic_Performance_GPA"
-]
-for variable in variables:
-    r,p_value = pearsonr(
-        df["Daily_Usage_Hours"],
-        df[variable]
-    )
-    print(f"Daily Usage Hours and {variable}")
-    print(f"Correlation: {r:.4f}")
-    print(f"P-value: {p_value:.10e}")
+# variables = [
+#     "Sleep_Duration_Hours",
+#     "Sleep_Quality_Score",
+#     "Perceived_Stress_Score",
+#     "Mental_Health_Index",
+#     "Academic_Performance_GPA"
+# ]
+# for variable in variables:
+#     r,p_value = pearsonr(
+#         df["Daily_Usage_Hours"],
+#         df[variable]
+#     )
+    # print(f"Daily Usage Hours and {variable}")
+    # print(f"Correlation: {r:.4f}")
+    # print(f"P-value: {p_value:.10e}")
 
+# r,p_value =pearsonr(
+#   df["Perceived_Stress_Score"],
+#   df["Mental_Health_Index"]
+# )
+# print(f"Stress and Mental Health")
+# print(f"Correlation : {r:.4f}")
+# print(f"P-value : {p_value:.10e}")
 
 """
 Daily Usage ile Mental Health arasındaki güçlü ilişkiyi başka değişkenler nasıl etkiliyor?
